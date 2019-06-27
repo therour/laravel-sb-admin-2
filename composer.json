@@ -15,10 +15,15 @@
         "illuminate/support": "5.8.*",
         "illuminate/console": "5.8.*"
     },
+    "autoload": {
+        "psr-4": {
+            "Therour\\SbAdmin2\\": "src/"
+        }
+    },
     "extra": {
         "laravel": {
             "providers": [
-                "Therour\\Providers\\SbAdmin2ServiceProvider"
+                "Therour\\SbAdmin2\\Providers\\SbAdmin2ServiceProvider"
             ]
         }
     }
