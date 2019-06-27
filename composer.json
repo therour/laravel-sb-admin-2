@@ -1,0 +1,25 @@
+{
+    "name": "therour/laravel-sb-admin",
+    "description": "Sb Admin Layout for Laravel",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Nizom Sidiq",
+            "email": "nizomsidiq@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "php": "^7.1.13",
+        "illuminate/support": "5.8.*",
+        "illuminate/console": "5.8.*"
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Therour\\Providers\\SbAdmin2ServiceProvider"
+            ]
+        }
+    }
+}
