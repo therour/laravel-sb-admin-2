@@ -20,7 +20,8 @@ class SbAdmin2ServiceProvider extends ServiceProvider
         $this->app->singleton(SbOptions::class);
 
         $this->mergeConfigFrom(
-            __DIR__.'../../config/config.php', 'sb-admin-2'
+            __DIR__.'/../../config/config.php',
+            'sb-admin-2'
         );
     }
 
@@ -32,8 +33,8 @@ class SbAdmin2ServiceProvider extends ServiceProvider
     public function boot()
     {
         $this->publishes([
-            __DIR__.'../../config/config.php' => config_path('sb-admin-2.php'),
-        ]);
+            __DIR__.'/../../config/config.php' => config_path('sb-admin-2.php'),
+        ], 'config');
 
         $this->registerResources();
         
@@ -44,19 +45,18 @@ class SbAdmin2ServiceProvider extends ServiceProvider
         if (config('sb-admin.component', false)) {
             $this->registerComponents(config('sb-admin.component.registers', []));
         }
-
     }
 
     protected function registerResources()
     {
         $this->loadViewsFrom([
             resource_path('sb-admin-2/views'),
-            __DIR__.'../../resources/views',
+            __DIR__.'/../../resources/views',
         ], 'sb-admin-2');
 
         $this->publishes([
-            __DIR__.'../../resources' => resource_path('sb-admin-2'),
-        ], 'resource');
+            __DIR__.'/../../resources' => resource_path('sb-admin-2'),
+        ], 'sb-admin-2-resources');
     }
 
     /**

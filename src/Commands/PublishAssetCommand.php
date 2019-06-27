@@ -31,7 +31,8 @@ class PublishAssetCommand extends Command
         /** @var \Illuminate\Filesystem\Filesystem $filesystem */
         $filesystem = $this->laravel->make('files');
         $filesystem->copyDirectory(
-            __DIR__.'../../public', public_path('sb-admin-2')
+            __DIR__.'/../../public',
+            public_path('sb-admin-2')
         );
         
         $this->info('The sb-admin-2 asset\'s directory has been copied.');
