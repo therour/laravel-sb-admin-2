@@ -12,11 +12,11 @@
     
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
-    <link href="{{ asset('dist/css/fontawesome.css') }}" rel="stylesheet">
+    <link href="{{ asset('sb-admin-2/css/fontawesome-all.min.css') }}" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
     
     <!-- Styles -->
-    <link href="{{ asset('sb-admin-2/css/sb-admin-2.css') }}" rel="stylesheet">
+    <link href="{{ asset('sb-admin-2/css/sb-admin-2.min.css') }}" rel="stylesheet">
     
     <!-- Plugin Styles -->
     @stack('css-plugin')
@@ -72,7 +72,7 @@
     @stack('modals')
 
     <!-- Main Scripts -->
-    <script src="{{ asset('sb-admin-2/js/sb-admin-2.js') }}"></script>
+    <script src="{{ asset('sb-admin-2/js/sb-admin-2.min.js') }}"></script>
 
     <!-- Plugin Scripts -->
     @stack('js-plugin')
