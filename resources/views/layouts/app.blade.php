@@ -39,7 +39,7 @@
             <div id="content">
 
                 <!-- Topbar -->
-                @includeIf('sb-admin-2::layouts.partials.topbar')
+                @includeFirst([config('sb-admin-2.topbar'), 'sb-admin-2::layouts.partials.topbar'])
 
                 <div class="container-fluid">
                     @yield('content')

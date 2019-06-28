@@ -2,6 +2,7 @@
 
 namespace Therour\SbAdmin2\Providers;
 
+use Therour\SbAdmin2\SbMenuBuilder;
 use Therour\SbAdmin2\SbOptions;
 use Illuminate\Support\Facades\View;
 use Illuminate\Support\Facades\Blade;
@@ -99,9 +100,28 @@ class SbAdmin2ServiceProvider extends ServiceProvider
         View::share('sbAssets', $this->availablePlugins());
         View::share('sbPluginsLoaded', []);
         View::share('sbOptions', $this->app->make(SbOptions::class));
+        View::share('sbSidebarMenu', $this->app->make(SbMenuBuilder::class));
+
+        // Blade::component('sb-admin-2::components.sidebar.menu', 'sidebarMenu');
+        Blade::component('sb-admin-2::components.sidebar.dropdown', 'sidebarDropdown');
 
         Blade::directive('requireplugin', new Directives\RequirePlugin);
 
         Blade::directive('setOption', new Directives\SetOption);
+
+        Blade::directive('sidebarDivider', function ($expression) {
+            return '<?php echo $sbSidebarMenu->renderDivider() ?>';
+        });
+        Blade::directive('sidebarHeading', function ($expression) {
+            return '<?php echo $sbSidebarMenu->renderHeading('.$expression.') ?>';
+        });
+
+        Blade::directive('sidebarMenu', function ($expression) {
+            return '<?php echo $sbSidebarMenu->renderMenu('.$expression.') ?>';
+        });
+
+        Blade::directive('sidebarDropdown', function ($expression) {
+            return '<?php echo $sbSidebarMenu->renderDropdown('.$expression.') ?>';
+        });
     }
 }

@@ -7,7 +7,7 @@
     <ul class="navbar-nav mr-auto">
         <li class="nav-item">
             <h1 class="h3 text-gray-800 mb-0">
-                {{ $sbAdminOptions->title ?? config('app.name', 'Laravel') }}
+                {{ $sbOptions->title ?? config('app.name', 'Laravel') }}
             </h1>
         </li>
     </ul>
@@ -47,7 +47,7 @@
             <a class="nav-link dropdown-toggle" href="#" id="alertsDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <i class="fas fa-bell fa-fw"></i>
                 <!-- Counter - Alerts -->
-                <span class="badge badge-danger badge-counter">3+</span>
+                <span class="badge badge-danger badge-counter">{{ $sbOptions->unreadNotificationCount }}</span>
             </a>
             <!-- Dropdown - Alerts -->
             <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="alertsDropdown">
@@ -149,7 +149,7 @@
         <!-- Nav Item - User Information -->
         <li class="nav-item dropdown no-arrow">
             <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            <span class="mr-2 d-none d-lg-inline text-gray-600 small">Valerie Luna</span>
+            <span class="mr-2 d-none d-lg-inline text-gray-600 small">{{ auth()->check() ? auth()->user()->name : 'Guest' }}</span>
             <img class="img-profile rounded-circle" src="https://source.unsplash.com/QAB-WJcbgJk/60x60">
             </a>
             <!-- Dropdown - User Information -->

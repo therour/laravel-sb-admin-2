@@ -1,6 +1,8 @@
 <?php
 
 return [
+    'topbar' => null, // default sb-admin-2::layouts.partials.topbar
+    'sidebar-menu' => null, // default sb-admin-2::layouts.partials.sidebar-menu
     'component' => [
         'enable' => false,
         'registers' => [
