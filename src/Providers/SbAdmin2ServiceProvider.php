@@ -2,8 +2,8 @@
 
 namespace Therour\SbAdmin2\Providers;
 
-use Therour\SbAdmin2\SbMenuBuilder;
 use Therour\SbAdmin2\SbOptions;
+use Therour\SbAdmin2\SbMenuBuilder;
 use Illuminate\Support\Facades\View;
 use Illuminate\Support\Facades\Blade;
 use Illuminate\Support\ServiceProvider;

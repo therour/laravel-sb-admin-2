@@ -71,3 +71,7 @@ example is in [sidebar-menu.blade.php](https://github.com/therour/laravel-sb-adm
     }
 )
 ```
+
+# Upcoming
+
+create **SB Admin 2** Scaffolds page by `php artisan make:sb-admin`

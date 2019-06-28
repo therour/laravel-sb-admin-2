@@ -84,7 +84,7 @@ class SbMenu
         if ($request->url() == $this->getHref()) {
             return true;
         }
-        if ($this->route && $this->active && $this->isMatchWildcard($request->route()->getName(), $this->active)) {
+        if ($this->route && $this->active && $request->route()->named($this->active)) {
             return true;
         }
         if ($this->active && $this->isMatchWildcard($request->url(), url($this->active))) {
@@ -94,9 +94,9 @@ class SbMenu
 
     public function isMatchWildcard($source, $pattern)
     {
-        $pattern = preg_quote($pattern, '/');
-        $pattern = str_replace('\*', '.*?', $pattern);
-
-        return (bool) preg_match('/^'.$pattern.'$/i', $source);
+        if (substr($pattern, -1) === '*') {
+            $source .= '/';
+        }
+        return Str::is($pattern, $source);
     }
 }
