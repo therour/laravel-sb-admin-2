@@ -6,6 +6,7 @@ use Therour\SbAdmin2\SbOptions;
 use Therour\SbAdmin2\SbMenuBuilder;
 use Illuminate\Support\Facades\View;
 use Illuminate\Support\Facades\Blade;
+use Illuminate\Support\Facades\Route;
 use Illuminate\Support\ServiceProvider;
 use Therour\SbAdmin2\Commands\PublishAssetCommand;
 
@@ -43,9 +44,22 @@ class SbAdmin2ServiceProvider extends ServiceProvider
 
         $this->registerPlugins();
 
-        if (config('sb-admin.component', false)) {
-            $this->registerComponents(config('sb-admin.component.registers', []));
+        if (config('sb-admin-2.component', false)) {
+            $this->registerComponents(config('sb-admin-2.component.registers', []));
         }
+
+        if (config('sb-admin-2.demo', false)) {
+            $this->loadDemoRoutes();
+        }
+    }
+
+    protected function loadDemoRoutes()
+    {
+        Route::namespace('\Therour\SbAdmin2\Controllers')
+            ->prefix('demos')
+            ->middleware('web')
+            ->name('demos.')
+            ->group(__DIR__.'/../../routes/demo.php');
     }
 
     protected function registerResources()

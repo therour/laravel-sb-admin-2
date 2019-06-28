@@ -1,6 +1,9 @@
 <?php
 
 return [
+    // set true to enable Demo routes : '/demos'
+    'demo' => false,
+
     'topbar' => null, // default sb-admin-2::layouts.partials.topbar
     'sidebar-menu' => null, // default sb-admin-2::layouts.partials.sidebar-menu
     'component' => [

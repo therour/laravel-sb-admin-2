@@ -11,7 +11,7 @@
     @includeFirst([config('sb-admin-2.sidebar-menu'), 'sb-admin-2::layouts.partials.sidebar-menu'])
     <!-- Divider -->
     <!-- Sidebar Toggler (Sidebar) -->
-    <div class="text-center d-none d-md-inline mt-auto mb-5">
+    <div class="text-center d-none d-md-inline">
         <button class="rounded-circle border-0" id="sidebarToggle"></button>
     </div>
 </ul>
