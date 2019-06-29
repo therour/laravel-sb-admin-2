@@ -15,20 +15,18 @@ composer require therour/laravel-sb-admin
 Therour\SbAdmin2\Providers\SbAdmin2ServiceProvider::class,
 ...
 ```
-3. Copy the public asset by running command
-```
-php artisan sb-admin:install
-```
-4. Publish the package's config file
-```
-php artisan vendor:publish --provider=Therour\SbAdmin2\Providers\SbAdmin2ServiceProvider --tag=config
-```
-5. Publish the package resource files.
-```
-php artisan vendor:publish --tag=sb-admin-2-resources
-```
-
-You may make changes to `resources/sb-admin-2` files.
+3. Install views.
+    a. Install by scaffold the `make:auth`-like views using (nb: this will publish the config file, and public asset files)
+    ```
+    php artisan sb-admin:scaffold
+    ```
+    b. Publish the resource files, (this will publish resource files in `resources/sb-admin-2` folders, and publish the config file)
+    ```
+    php artisan vendor:publish --provider="Therour\SbAdmin2\Providers\SbAdmin2ServiceProvider"
+    // if you managed to publish the compiled assets, run this
+    php artisan sb-admin:publish-assets
+    ```
+4. (optional) Run the demo routes, by set `demo => true` in your `config/sb-admin-2.php` config file, Then you can access `/demos` routes.
 
 ## Special Usage
 ### Define global variables in view
@@ -71,7 +69,3 @@ example is in [sidebar-menu.blade.php](https://github.com/therour/laravel-sb-adm
     }
 )
 ```
-
-# Upcoming
-
-create **SB Admin 2** Scaffolds page by `php artisan make:sb-admin`
