@@ -1,0 +1,19 @@
+@sidebarMenu([
+    'title' => 'Dashboard',
+    'icon' => 'fas fa-fw fa-tachometer-alt',
+    'route' => 'home',
+])
+
+@sidebarDivider
+
+@sidebarHeading('Example')
+
+@sidebarDropdown([
+    'title' => 'Dropdowns',
+    'icon' => 'fas fa-fw fa-cog',
+    ], function ($dropdown) {
+        $dropdown->heading('Dropdown Menus:');
+        $dropdown->menu(['title' => 'Menu 1', 'url' => '#']);
+        $dropdown->menu(['title' => 'Menu 2', 'url' => '#']);
+    }
+)

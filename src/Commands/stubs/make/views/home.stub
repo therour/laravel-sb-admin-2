@@ -1,0 +1,15 @@
+@extends('sb-admin-2::layouts.app')
+@setOption('title', 'Dashboard')
+
+@section('content')
+<div class="jumbotron">
+    <h2>Welcome, {{ auth()->user()->name }}</h2>
+    @if (session('status'))
+        <div class="alert alert-success" role="alert">
+            {{ session('status') }}
+        </div>
+    @endif
+
+    <h3>You are logged in!</h3>
+</div>
+@endsection

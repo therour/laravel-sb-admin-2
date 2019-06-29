@@ -36,7 +36,7 @@
     @stack('modals')
 
     <!-- Main Scripts -->
-    <script src="{{ asset('sb-admin-2/js/sb-admin-2.js') }}"></script>
+    <script src="{{ asset('sb-admin-2/js/sb-admin-2.min.js') }}"></script>
 
     <!-- Plugin Scripts -->
     @stack('js-plugin')

@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\View;
 use Illuminate\Support\Facades\Blade;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\ServiceProvider;
+use Therour\SbAdmin2\Commands\MakeScaffoldCommand;
 use Therour\SbAdmin2\Commands\PublishAssetCommand;
 
 class SbAdmin2ServiceProvider extends ServiceProvider
@@ -41,6 +42,7 @@ class SbAdmin2ServiceProvider extends ServiceProvider
         $this->registerResources();
         
         $this->commands(PublishAssetCommand::class);
+        $this->commands(MakeScaffoldCommand::class);
 
         $this->registerPlugins();
 

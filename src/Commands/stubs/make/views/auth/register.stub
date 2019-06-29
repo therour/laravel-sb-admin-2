@@ -22,7 +22,7 @@
                                     <div class="form-group">
                                         <input type="text" name="name" value="{{ old('name') }}" class="form-control form-control-user @error('name') is-invalid @enderror" id="exampleFirstName" placeholder="{{ __('Your Name') }}" required autocomplete="name" autofocus>
                                         @error('name')
-                                        <span class="invalid-feedback" role="alert">
+                                        <span class="invalid-feedback px-4" role="alert">
                                             {{ $message }}
                                         </span>
                                         @enderror
@@ -30,7 +30,7 @@
                                     <div class="form-group">
                                         <input type="email" name="email" value="{{ old('email') }}" class="form-control form-control-user @error('email') is-invalid @enderror" id="exampleInputEmail" placeholder="{{ __('E-Mail Address') }}" required autocomplete="email">
                                         @error('email')
-                                        <span class="invalid-feedback" role="alert">
+                                        <span class="invalid-feedback px-4" role="alert">
                                             {{ $message }}
                                         </span>
                                         @enderror
@@ -38,7 +38,7 @@
                                     <div class="form-group">
                                         <input type="password" name="password" class="form-control form-control-user @error('password') is-invalid @enderror" id="exampleInputPassword" placeholder="Password" autocomplete="new-password">
                                         @error('password')
-                                        <span class="invalid-feedback" role="alert">
+                                        <span class="invalid-feedback px-4" role="alert">
                                             {{ $message }}
                                         </span>
                                         @enderror

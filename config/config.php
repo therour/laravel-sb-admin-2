@@ -6,6 +6,8 @@ return [
 
     'topbar' => null, // default sb-admin-2::layouts.partials.topbar
     'sidebar-menu' => null, // default sb-admin-2::layouts.partials.sidebar-menu
+    'brand' => null, // default sb-admin-2::layouts.partial.brand
+
     'component' => [
         'enable' => false,
         'registers' => [

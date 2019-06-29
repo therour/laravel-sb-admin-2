@@ -11,7 +11,7 @@ class PublishAssetCommand extends Command
      *
      * @var string
      */
-    protected $signature = 'sb-admin:install';
+    protected $signature = 'sb-admin:publish-assets';
     /**
      * The console command description.
      *
@@ -25,11 +25,11 @@ class PublishAssetCommand extends Command
      */
     public function handle()
     {
-        if (file_exists(public_path('sb-admin-2'))) {
-            return $this->error('The "public/sb-admin-2" directory already exists.');
-        }
         /** @var \Illuminate\Filesystem\Filesystem $filesystem */
         $filesystem = $this->laravel->make('files');
+        if (file_exists(public_path('sb-admin-2'))) {
+            $filesystem->deleteDirectories(public_path('sb-admin-2'));
+        }
         $filesystem->copyDirectory(
             __DIR__.'/../../public',
             public_path('sb-admin-2')
