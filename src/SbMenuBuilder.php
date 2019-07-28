@@ -2,11 +2,10 @@
 
 namespace Therour\SbAdmin2;
 
-use Illuminate\Http\Request;
 use Therour\SbAdmin2\SbMenu;
 use Therour\SbAdmin2\SbDropdown;
 
-class SbMenuBuilder
+class SbMenuBuilder implements SbMenuFactory
 {
     /**
      * Render a divider
@@ -104,6 +103,6 @@ class SbMenuBuilder
      */
     protected function getRequest()
     {
-        return request();
+        return app('request');
     }
 }

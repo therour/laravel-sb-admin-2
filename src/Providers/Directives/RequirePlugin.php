@@ -11,14 +11,14 @@ $__env->startPush(\'js-plugin\');
 if (! Arr::get($sbPluginsLoaded, '.$expression.'.\'.js\')):
     Arr::set($sbPluginsLoaded, '.$expression.'.\'.js\', true);
 foreach (\Illuminate\Support\Arr::get($sbAssets, '.$expression.'.\'.js\', []) as $jsAsset): ?>
-<script src="<?php echo $jsAsset ?>"></script>
+<script src="<?php echo asset($jsAsset) ?>"></script>
 <?php endforeach; endif;
 $__env->stopPush();
 $__env->startPush(\'css-plugin\');
 if (! Arr::get($sbPluginsLoaded, '.$expression.'.\'.css\')):
     Arr::set($sbPluginsLoaded, '.$expression.'.\'.css\', true);
 foreach (\Illuminate\Support\Arr::get($sbAssets, '.$expression.'.\'.css\', []) as $cssAsset): ?>
-<link href="<?php echo $cssAsset ?>" rel="stylesheet">
+<link href="<?php echo asset($cssAsset) ?>" rel="stylesheet">
 <?php endforeach; endif;
 $__env->stopPush();
 endif; ?>';
