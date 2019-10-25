@@ -19,9 +19,11 @@ class SbMenu
     protected $icon;
     protected $active;
     protected $type = 'menu';
+    protected $attributes = [];
 
     public function __construct(array $builder)
     {
+        $this->attributes = $builder;
         $this->setTitle(Arr::get($builder, 'title'));
         $this->setHref(Arr::only($builder, ['href', 'url', 'route']));
         $this->setIcon(Arr::get($builder, 'icon'));
@@ -77,6 +79,16 @@ class SbMenu
     public function getTitle()
     {
         return $this->title;
+    }
+
+    public function getAttributes()
+    {
+        return $this->attributes;
+    }
+
+    public function getAttribute(string $key)
+    {
+        return Arr::get($this->attributes, $key);
     }
 
     public function isActive(Request $request)
